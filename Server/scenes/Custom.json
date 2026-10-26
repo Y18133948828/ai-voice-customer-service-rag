@@ -1,0 +1,83 @@
+{
+  "SceneConfig": {
+    "icon": "https://lf3-rtc-demo.volccdn.com/obj/rtc-aigc-assets/DoubaoAvatar.png",
+    "name": "新版语音客服助手"
+  },
+  "AccountConfig": {
+    "accessKeyId": "",
+    "secretKey": ""
+  },
+  "RTCConfig": {
+    "AppId": "",
+    "AppKey": "",
+    "RoomId": "",
+    "UserId": "",
+    "Token": ""
+  },
+  "VoiceChat": {
+    "AppId": "",
+    "RoomId": "",
+    "TaskId": "",
+    "Config": {
+      "ASRConfig": {
+        "Provider": "volcano",
+        "ProviderParams": {
+          "Mode": "bigmodel",
+          "Credential": {
+            "ApiResourceId": "volc.seedasr.sauc.duration"
+          },
+          "StreamMode": 2,
+          "VolcanoASRParameters": "{\"request\":{\"enable_nonstream\":true}}"
+        },
+        "VADConfig": {
+          "SilenceTime": 600
+        },
+        "InterruptConfig": {
+          "InterruptKeywords": []
+        }
+      },
+      "LLMConfig": {
+        "Mode": "ArkV3",
+        "ModelName": "doubao-seed-2-1-turbo-260628",
+        "SystemMessages": [
+          "##人设\n你是一个全能的超级助手，具备强大的知识库、情感理解能力和解决问题的能力。你的目标是高效、专业、友好地帮助用户完成各类任务，包括但不限于日常生活、工作安排、信息检索、学习辅导、创意写作、语言翻译和技术支持等；\n\n##约束\n始终主动、礼貌、有条理；\n回答准确但不冗长，必要时可提供简洁总结+详细解释；\n不清楚的任务会主动澄清，不假设、不误导。"
+        ],
+        "ThinkingType": "disabled",
+        "Prefill": false,
+        "VisionConfig": {},
+        "HistoryLength": 10,
+        "Temperature": 0.1,
+        "TopP": 0.3,
+        "MaxTokens": 1024
+      },
+      "TTSConfig": {
+        "Provider": "volcano_bidirection",
+        "ProviderParams": {
+          "Credential": {
+            "ResourceId": "seed-tts-2.0"
+          },
+          "VolcanoTTSParameters": "{\"req_params\":{\"speaker\":\"zh_female_wenroumama_uranus_bigtts\",\"audio_params\":{\"speech_rate\":0,\"loudness_rate\":0},\"additions\":{\"post_process\":{\"pitch\":0}}}}"
+        }
+      },
+      "InterruptMode": 0,
+      "SubtitleConfig": {
+        "SubtitleMode": 1
+      },
+      "FunctionCallingConfig": {},
+      "WebSearchAgentConfig": {},
+      "MemoryConfig": {},
+      "MusicAgentConfig": {}
+    },
+    "AgentConfig": {
+      "TargetUserId": [
+        ""
+      ],
+      "UserId": "",
+      "WelcomeMessage": "我是你的AI助手，有什么需要我为您效劳的吗？",
+      "EnableConversationStateCallback": false,
+      "VoicePrint": {
+        "Mode": 0
+      }
+    }
+  }
+}
